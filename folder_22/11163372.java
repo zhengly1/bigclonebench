@@ -1,0 +1,9 @@
+public class BigbenchClone{    
+    public static IChannelSourceDAO getChannelSourceDAO() {
+        if (channelSourceDAO == null) {
+            channelSourceDAO = new ChannelHTTPClientDAO();
+            channelSourceDAO.setSessionFactory(defaultHTTPClientSessionFactory);
+        }
+        return channelSourceDAO;
+    }
+}
